@@ -1,0 +1,111 @@
+it is nosql database
+>not a sql
+
+sql               nosql
+database          database
+table             collection
+row               documents
+select            find
+insert            insert
+update            update
+delete            remove
+
+>>SQL
+
+RollNo    |   Hindi   |  English  | Computer |
+  1       |           |     80    |          |
+  2       |   80      |           |          |
+  3       |   80      |           |  90      |
+
+>>NoSql
+[
+    {
+        RollNo: 1,
+        English: 80
+    },
+    {
+        RollNo: 1,
+        Hindi: 80
+    },
+    {
+        RollNo: 1,
+        Hindi: 80,
+        Computer: 90
+    }
+
+////Steps to setup mongodb/////
+>install mongodb
+>in C drive create a folderby the name of "db"
+>in db create a folder by the name of "data"
+
+>C:\data\db 
+>27017
+
+///////////////////////////////////////////////////////////////
+>>>>steps to start server<<<<
+>open cmd
+>go inside folder
+   c:\Program Files\MongoDB\Server\5.0\bin
+>type mongod
+(must always be running till the app is running)
+
+>>>>steps to start client<<<<
+>open cmd
+>go inside folder
+   c:\Program Files\MongoDB\Server\5.0\bin
+>type mongo
+//////////////////////////////////////////////////////////////
+
+//to see all database
+> show dbs
+
+//to go inside database
+> use database name >> {use decnode}
+
+//to see all collection
+> show collection
+
+//to see all data in collection
+> db.collectionName.find()  >>{db.category.find().pretty()}
+
+_id > is default primary key, no duplicates
+{it must be given to the data, if we not assign to it, it will automatically assign any unique random value}
+
+>Default Primary Key
+12 byte
+(random number) - 5 bytes
+(series) - 3 bytes
+(timestamp) - 4 bytes
+
+
+//create a new database
+use databaseName    >>> create a new database or go to existing database file
+
+// to see all collections
+show collections
+
+//insert data
+db.collectionname.insert({name:"John"})
+db.test.insert({name:"john"})
+db.test.insert({_id:1,name:"Suru"})  >> cannot be same _id
+db.test.insert({_id:1,name:"Anshu"})
+
+//find with conditions
+db.products.find({category_id:1}).pretty()
+
+>>when more than 1 conditions is required
+db.products.find({category_id:2, product_name:"Washing Machine"}).pretty()   
+
+//to set limit
+db.products.find({category_id:1}).limit(10).pretty()
+
+//& then 10 records
+db.products.find({category_id:1}).skip(10).limit(10).pretty()
+
+//projection (select particular fields)
+db.products.find({condition},{projection}).pretty()
+
+db.products.find({},{product_name:1,Price:1}).pretty()  ///case sensitive
+
+db.products.find({},{product_name:1,Price:1,_id:0}).pretty()  ///0= not, 1=yes, Boolean
+

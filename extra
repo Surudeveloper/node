@@ -1,0 +1,262 @@
+https://code.visualstudio.com/download > download & install
+https://nodejs.org/en/ > download & install
+https://github.com/ > create an account
+https://git-scm.com/downloads > download & install
+https://www.postman.com/ > download & install
+
+> TabNine
+> vscode-icons
+> git history
+> git Lens
+> spellCheck
+> eslint
+
+NPM
+Basic NodeJS(in built)(Os,file,http)
+NodeJS(full Stack App) (Node-EJS-Mongo-Express)
+Third Party Api (Weather Api)
+% `https://api.openweathermap.org/data/2.5/forecast/daily?q=delhi&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29'
+Redis  > 6379
+ImageUpload
+Node-Es6(.babel)
+MongoDb Basic >27017  (local/cloud)
+Api with NodeJS(Rest)>1
+Swagger
+Github
+DashBoard(Crud)
+--Deployment of app---
+Docker
+Heroku
+Nginx
+Pm2
+Testing
+Login/Logout(JWT)
+Oauth(with github)
+Oauth(with google)
+NodeJs with postgres
+GraphQl API
+Paytm-Payment
+Chatapp
+TelegramChat
+Email With Node(sendgird) (https://app.sendgrid.com/)
+FIREBASE
+--------NOT---------
+React/Angular
+Html/css/jquery
+
+MERN stack {Mongo(DataBase); Express(Backend); React(Frontend); NodeJs(Backend)}
+----------------------------------------------------------------------------------------------------------------------------------
+NodeJs>
+> is Single Threaded, Non Blocking, Async I/O 
+----------------------------------------------------------------------------------------------------------------------------------
+eg. (atm vs dominos)
+1. one have to wait for the process to be done by the person before him ; but in case of dominos if one orders any pizza they are said that once your order will be ready your no will appear on the screen then you can collect your order while person after him can order what he needs if that is available then they will provide them. so multiple request can be handled here simultaneously.
+2. first is synchronous process and blocking while dominos is asynchronous process and non-blocking
+3. Single threaded- in dominos 1 person who will take all your orders & the same person will give the order back so it work in a way on single thread & all the request will come at this place and they take the request and now they will assing it to event, whenever this request got complete i got response. similarly multiple request can be taken parallely without waiting for 1 thing to complete. Meanwhile when the req get completed we get res in the "CALLBACK"
+4. So each req will come on the single thread and we get the res, thats why it is called as async
+5. On the other side it is Non Blocking because there is multiple req handled parallely ie not blocking it
+6.  Assync is a process, Non-Blocking is a way, and single threaded becoz everything req come at this place.
+
+> But in case of JAVA multiple parallel thread will run and once process is completed we have to close it also, and one thing is GARBAGE-COLLECTOR we have to clean the thread also. For every req we have to run a discrete thread.
+
+> NodeJS is faster bcoz all the process is assync, & normally what happened in java it convert the "CODE > BYTE CODE > MACHINE CODE"; but in case of "NodeJS CODE > MACHINE CODE" (since 1 step is reduced,& multiple things are handled in single thread) that is why it has gain so much popular in the market. (linkedin, walmart, make my trip)
+
+> open source (anyone can contribute to the development) 
+
+Java  => code > byte code > machine code  
+NodeJs=> code > Machine Code             (nodeJS) 
+---------------------------------------------------------------------------------------------------- ----------------------------------
+
+> NPM
+> Node Package Manager (supporting library)
+(-ve point there is no any registry available that tells the user that for which thing what package should be selected, no such  list is available, not maintained, now it is impossible to segregate them)
+---------------------------------------------------------------------------------------------------------------------------------------
+> JSON > JavaScript Object Notation  (its not a language or data, it is a way to represent your data. All the frameworks are started dealing with the json only)
+
+it look like as below: {name=key, john=value, key-value pair of data}
+[
+    {
+        "name":"John",
+        "city":"Delhi"
+    },
+    {
+        "name":"Amit",
+        "city":"Amsterdam",
+        "class":"Node"
+    }
+]
+----------------------------------------------------------------------------learnpackage--------------------------------------------
+>>>>Package.JSON
+>>>>Install Package
+
+
+>>>>Package.JSON
+
+> it is the entry point to the app
+> Script (start,test) {it contain all the thing in term of SCRIPT to start, build & test the application } 
+> Contain all the packages
+> MeTa Data (name, description,version of the app)
+
+///Step To Generate The Package.Json////
+* NodeJs Must be install in laptop
+> npm init 
+> Answer all question
+> type "yes"
+--------------------------------------------------------------------inbuilt-------------------------------------------------------
+>>>Local Dependencies
+> Install for particular application
+> Scope of the packages is for same app
+
+///Step To Install Packages////
+> go inside the folder using cmd/terminal
+> npm i packagename
+
+when we install cors, then with that package some more package automatically installed, this is called as child dependency (eg tomato purie which also comes along with preservatives )
+>cors ----is a package made by some other developer, the other package we got while install is internal dependencies of cors, there is no way to ignore at all because these are the child dependencies
+>>PackageLock > dependency tree
+>package-lock.json--- is dependency tree, describe that what package require some more packages 
+><gitignore>---- what not to push to the git, becoz some of them are very heavy folders, we never transport these heavy folder to anyone
+>when we get others code we get it without the node_module packages, for this just write <npm i> it will go to the folder look for the package.json file & from that it look for the dependencies & automatically install all required packages in a single go.
+<morgan> package that helps to fetch the logs ( <npm i morgan>) to use this (var morgan = require('morgan'))
+<middleware> it is basically supporting (library) part of our app{<app.get> for route & <app.use> for middleware}
+--------------------------------------------------------------------------------------------------------------------------------
+>>>Global Dependencies
+> Install in your laptop irrespective of folder
+> We need admin access to install
+> Can be used by any application
+> Will not added to packages.json
+> package Required to start or build the app
+
+//// Step to install global packages/////
+# window
+> open the cmd as admin
+> npm i -g packageName
+
+# Mac/linux
+> open the terminal
+> sudo npm i -g packageName
+
+>>nodemon
+npm i -g nodemon
+help to do continous development
+
+start- for production (start command)
+dev- for development (dev command)
+>>> Dev Dependencies
+---------------------------------------------------------------------------------------------------------------------------
+
+>>>>NodeIn built
+>>Os    (platform, arch, cpus, freemem, totalmem, version, release, uptime, userInfo, type)
+
+>>fs  >fileSystem  (write, append, read, rename & delete)
+>Write- To Write/ Make a new File, if we again run the file with diff data, then it will overwrite the existing data {any file ie txt, json, pdf, doc etc}
+>Append- in this, it doesn't overwrite the file instead it append the file.
+>Read- it is used to read the file(encoded format, but for readable form we use encoding method utf-8 for encoding for browser)
+>Rename- rename file
+>delete- dlt file
+*CALLBACK- acknowledgement (suppose i have given some task to someone, & at one pt i want to know that what he have done to the task, so how i will know that he is done with the task, we need some acknowledgement. Basically i am waiting for him to complete the things) 
+
+OR callback fn is a function inside a function to acknowledge when the things are done.
+
+>>http
+req > what we request to server through params(/), queryparams(?), body(=)
+res > what we get from the server in response/output
+
+
+>>dummyApi (API- Application Programming Interface) (REST API- Representational state transfer Application Programming Interface)
+
+>>staticapi
+>>express- it is a framework(supporting library of any language) of nodejs. these are the one which help to make the app with better sense(by adding more functionality to the app)
+
+-------------------------------------------------------------------------fullstack----------------------------------------------
+server- space where the app run.
+in real application(in real company u go) there is an environment 
+3 environments are there- 1.DEV  2.QA   3.Production  (all 3 env have 3 different server)
+let we define a port no 4700
+
+in real env, on the DEV server we hv some port no suppose 8700, also QA server suppose port 2000 is open for u, similarly in the production port 7001 is open for u.(we get the env in the company)
+but the problem is that we hv a app, in that we hv defined port no only once, it cant differentiate whether it is dev server QA server or production server
+so u as a developer hv only access to push the code to the DEV server from dev server it will move to the QA server from dev server  and from QA to production server, this is a flow of one app.
+
+now in this scenario what happened is i don't hv any access to define the port no u cant change the code at this stage only 1 code will go from one server to other server 
+now how we do is we hv to make a application in the way that this can be made in the process when we made env so we write <var port = process.env.PORT || 9700>
+it work in 2 different direction
+<process.env.PORT>- if the env var is defined, so basically remember u do rt click say properties env variable in ur system, we define the env var 
+so the way we defined the env var in the same manner, on every server we define the env variable 
+so when it enter in the <DEV server> it check is the env var on dev server is available if it is available it will pick that, else run on 9700
+Now it will go to next place ie, QA again it check is the env var on <QA server> is available if it is available it will pick that, else run on 9700
+Now it will go to next place ie, Production again it check is the env var on <Production server> is available if it is available it will pick that, else run on 9700
+So in other words, it is going in the way now it run the application on each server if the env var is present it will pick that env var, if it is not available it wont pick that
+there is also an option is available that we can also define 1 env file (.env) to use this we hv to actually install 1 package <npm i dotenv>
+<var dotenv = require('dotenv')  
+dotenv.config() >(to use this package), this must be above to the below 2 lines
+<var port = process.env.PORT || 9700>
+
+***for router=> 1. var nameRouter= express.Router()
+                2. nameRouter.route('/')
+                .get((req, res)=>{
+                    res.send(name)
+                })
+              
+                nameRouter.route('/details')
+                .get((req, res)=>{
+                    res.send('Name Details')
+                })
+                3. app.use('/name',nameRouter)
+
+MVC (Model-View-Controller) => it was initially a framework of DOTNET. After that it became a pattern & people start following such pattern, it is just style of writing a coding. it is just a structure. (here model is the structure, router is controller, & view is for view)
+
+EJS => it is a template engine (embedded Javascript) <npm i ejs>
+
+it is just like HTML, but we use ejs with simple html file every thing we can do with it but we cant bind the data.
+//For all static things we make a <Public> folder for all static things like css. to use this
+<app.use(express.static(__dirname+'/public'));>
+//for html file
+<app.set('views','./src/views');>
+//for view engine path
+<app.set('view engine','ejs')>
+when we are dealing with display part we have to write 
+<res.render('index')> 
+we dont hv to specify which file or folder, it is already specified just say index.
+
+when we bind the data we use <%=data%>
+when we write a logic we use <%logic%>
+when key:value both name are same we can write it once is called DATA DESTRUCTURING
+------------------------------------------------------------------------------------------------------------------------------------------
+
+params (/) > compulsory > {req.params.id} >> when to pass 1 value
+queryParams(?)> no need to define anywhere > req.query.name >> when to multiple value
+
+>>es5 to es6
+
+function add(a,b){
+    return a+b
+}
+add(1,2)
+
+let add =(a,b) =>{return a+b}       >>>> es6
+
+// var express = require ('express')
+import express from 'express'
+
+require          ->     import
+var              ->     let
+normal function  ->     arrow function (=>)
+
+//Babel (transpiler {make our code backward compatible})
+npm i @babel/core @babel/register @babel/preset-env
+
+///image upload
+npm i body-parser ejs express express-fileupload
+
+mongodb+srv://suru:s123@cluster0.ljpen.mongodb.net/decnode?retryWrites=true&w=majority
+
+mongodb+srv://suru:<password>@cluster0.ljpen.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+cors-> cross origin resource sharing
+
+>>>login JWT
+npm i jsonwebtocken express cors mongoose bcryptjs body-parser
+
+///dummy api
+npx json-server --watch db.json --port 8700
